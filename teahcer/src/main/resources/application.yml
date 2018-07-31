@@ -1,0 +1,29 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: teacher-service
+  datasource:
+    dirver: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://111.230.199.112:3306/cloudtest?characterEncoding=utf-8&serverTimezone=UTC
+    username: test123
+    password: Test#@123
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  zipkin:
+    base-url: http://localhost:8060
+  sleuth:
+    sampler:
+      percentage: 1.0
+feign:
+  hystrix:
+    enabled: true
+eureka:
+  client:
+    serviceUrl:
+#      defaultZone: http://192.168.50.201:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
