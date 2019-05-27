@@ -14,7 +14,6 @@
         <module>zuul</module>
         <module>teahcer</module>
         <module>student</module>
-        <module>zipkin-server</module>
         <module>zipkin</module>
     </modules>
 
