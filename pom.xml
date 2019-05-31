@@ -12,7 +12,7 @@
         <module>school</module>
         <module>eureka</module>
         <module>zuul</module>
-        <module>teahcer</module>
+        <module>teacher</module>
         <module>student</module>
         <module>zipkin</module>
     </modules>
