@@ -1,39 +1,13 @@
+server:
+  port: 8081
 spring:
   application:
     name: school-service
----
-spring:
-  profiles: public
   datasource:
     dirver: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://111.230.199.112:3306/cloudtest?characterEncoding=utf-8&serverTimezone=UTC
-    username: test123
-    password: Test#@123
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-  zipkin:
-    base-url: http://192.168.50.201:9411/zipkin/
-  sleuth:
-    sampler:
-      percentage: 1.0
-server:
-  port: 8081
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://192.168.50.201:8761/eureka/
-  instance:
-    prefer-ip-address: true
----
-spring:
-  profiles: private
-  datasource:
-    dirver: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://111.230.199.112:3306/cloudtest?characterEncoding=utf-8&serverTimezone=UTC
-    username: test123
-    password: Test#@123
+    url: jdbc:mysql://devops2/cloudtest?characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+    password: 123456
   jpa:
     hibernate:
       ddl-auto: update
@@ -43,11 +17,6 @@ spring:
   sleuth:
     sampler:
       percentage: 1.0
-server:
-  port: 8084
-feign:
-  hystrix:
-    enabled: true
 eureka:
   client:
     serviceUrl:
