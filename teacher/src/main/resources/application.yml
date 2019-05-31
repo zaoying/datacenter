@@ -6,8 +6,8 @@ spring:
   datasource:
     dirver: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://devops2/cloudtest?characterEncoding=utf-8&serverTimezone=UTC
-      username: root
-      password: 123456
+    username: root
+    password: 123456
   jpa:
     hibernate:
       ddl-auto: update
