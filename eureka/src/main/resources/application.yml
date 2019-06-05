@@ -1,5 +1,6 @@
 server:
   port: 8761
+  address: localhost
 eureka:
   client:
     registerWithEureka: false

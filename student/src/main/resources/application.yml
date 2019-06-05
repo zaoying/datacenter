@@ -1,5 +1,6 @@
 server:
   port: 8083
+  address: localhost
 spring:
   application:
     name: student-service
