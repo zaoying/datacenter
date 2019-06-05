@@ -5,9 +5,9 @@ spring:
     name: student-service
   datasource:
     dirver: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://devops2/cloudtest?characterEncoding=utf-8&serverTimezone=UTC
+    url: jdbc:mysql://devops2:12305/cloudtest?characterEncoding=utf-8&serverTimezone=UTC
       username: root
-      password: 123456
+      password: bocloud@2019
   jpa:
     hibernate:
       ddl-auto: update
