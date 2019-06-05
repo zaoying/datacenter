@@ -1,6 +1,6 @@
 server:
   port: 8084
-  address: localhost
+  address: 127.0.0.1
 spring:
   application:
     name: school-service
