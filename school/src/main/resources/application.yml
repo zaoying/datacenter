@@ -4,6 +4,9 @@ server:
 spring:
   application:
     name: school-service
+  cloud:
+    inetutils:
+      default-ip-address: 127.0.0.1
   datasource:
     dirver: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://devops2:12305/cloudtest?characterEncoding=utf-8&serverTimezone=UTC
@@ -23,4 +26,4 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
   instance:
-    prefer-ip-address: true
+      prefer-ip-address: true

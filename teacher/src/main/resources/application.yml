@@ -4,6 +4,9 @@ server:
 spring:
   application:
     name: teacher-service
+  cloud:
+    inetutils:
+      default-ip-address: 127.0.0.1
   datasource:
     dirver: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://devops2:12305/cloudtest?characterEncoding=utf-8&serverTimezone=UTC
