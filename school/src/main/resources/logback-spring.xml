@@ -5,7 +5,7 @@
         <destination>172.19.0.1:5044</destination>
         <!-- encoder is required -->
         <encoder class="net.logstash.logback.encoder.LogstashEncoder">
-            <customFields>{"appname":"${appName}"}</customFields>
+            <customFields>{"appname":"${spring.application.name}"}</customFields>
         </encoder>
     </appender>
 
