@@ -6,7 +6,7 @@
         <!-- encoder is required -->
         <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
         <layout class="net.logstash.logback.layout.LogstashLayout">
-            <customFields>{"appname":"school-service"}</customFields>
+            <customFields>{"appname":"teacher-service"}</customFields>
         </layout>
     </appender>
 
