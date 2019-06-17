@@ -4,10 +4,9 @@
     <appender name="logstash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
         <destination>172.19.0.1:5044</destination>
         <!-- encoder is required -->
-        <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
-        <layout class="net.logstash.logback.layout.LogstashLayout">
-            <customFields>{"appname":"student-service"}</customFields>
-        </layout>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <customFields>{"appname":"${appName}"}</customFields>
+        </encoder>
     </appender>
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
