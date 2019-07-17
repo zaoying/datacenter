@@ -6,4 +6,4 @@ nohup java \
 -Dspring.profiles.active=gray \
 -Dserver.address=172.18.0.1 \
 -Deureka.instance.metadata-map.gray=true \
--jar $1 > $2.log & echo $!  >> pid
+-jar $1 > $2-gray.log & echo $!  >> pid
