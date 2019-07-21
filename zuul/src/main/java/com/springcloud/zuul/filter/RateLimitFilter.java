@@ -13,7 +13,7 @@ import static org.springframework.http.HttpStatus.TOO_MANY_REQUESTS;
  */
 public class RateLimitFilter extends ZuulFilter {
 
-    private RateLimiter rateLimiter = RateLimiter.create(3);
+    private RateLimiter rateLimiter = RateLimiter.create(10000);
 
     @Override
     public String filterType() {
