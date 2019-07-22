@@ -10,13 +10,13 @@ spring:
       percentage: 1.0
 eureka:
   client:
+    healthcheck:
+      enabled: true
     serviceUrl:
       defaultZone: http://172.18.0.1:8761/eureka/
   instance:
     prefer-ip-address: true
 zuul:
-  health:
-    enabled: true
   routes:
     school-route:
       path: /school/**
