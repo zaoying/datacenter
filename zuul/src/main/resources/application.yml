@@ -16,6 +16,13 @@ eureka:
       defaultZone: http://172.18.0.1:8761/eureka/
   instance:
     prefer-ip-address: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: *
+    shutdown:
+      enabled: false
 zuul:
   routes:
     school-route:
