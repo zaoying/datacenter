@@ -44,3 +44,7 @@ eureka:
   instance:
     ip-address: ${server.address}
     prefer-ip-address: true
+management:
+  metrics:
+    tags:
+      application: ${spring.application.name}
