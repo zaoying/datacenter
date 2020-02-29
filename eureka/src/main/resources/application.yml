@@ -1,9 +1,6 @@
 server:
   port: 8761
-  address: localhost
 eureka:
   client:
     registerWithEureka: false
     fetchRegistery: false
-    serviceUrl:
-      defaultZone: http://${server.address}:${server.port}/eureka
