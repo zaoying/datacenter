@@ -22,22 +22,17 @@ spring:
     name: school-service
   datasource:
     dirver: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://devops2:12305/cloudtest?characterEncoding=utf-8&serverTimezone=UTC
+    url: jdbc:mysql://mysql:12305/cloudtest?characterEncoding=utf-8&serverTimezone=UTC
     username: root
     password: bocloud@2019
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
-  zipkin:
-    base-url: http://${server.address}:8060
-  sleuth:
-    sampler:
-      percentage: 1.0
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://${server.address}:8761/eureka/
+      defaultZone: http://eureka:8761/eureka/
   instance:
     ip-address: ${server.address}
     prefer-ip-address: true
