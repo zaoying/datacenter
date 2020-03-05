@@ -1,7 +1,7 @@
 # This workflow will build a Java project with Maven
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: Java CI with Maven
+name: Java CI with Maven And Docker
 
 on:
   push:
@@ -30,4 +30,9 @@ jobs:
         # Docker Channel
         docker_channel: stable # optional, default is stable
     - name: Build Image with Docker
-      run: docker build -t datacenter-school:latest school
+      run: docker build -t datacenter-school:latest school && docker save datacenter-school:latest > datacenter-school-latest.tar
+    - name: Download artifact
+      uses: actions/download-artifact@v1.0.0
+      with:
+        # Artifact name
+        name: datacenter-school-latest.tar
