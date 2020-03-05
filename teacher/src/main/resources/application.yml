@@ -22,9 +22,9 @@ spring:
     name: teacher-service
   datasource:
     dirver: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://mysql:12305/cloudtest?characterEncoding=utf-8&serverTimezone=UTC
-    username: root
-    password: bocloud@2019
+    url: jdbc:mysql://${MYSQL_ADDRESS:localhost:3306}/cloudtest?characterEncoding=utf-8&serverTimezone=UTC
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
