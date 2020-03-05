@@ -35,6 +35,6 @@ jobs:
       uses: actions/upload-artifact@v1.0.0
       with:
         # Artifact name
-        name: datacenter-school-latest.tar
+        name: datacenter-school-latest.tar.gz
         # Directory containing files to upload
-        path: ./
+        path: ./datacenter-school-latest.tar
