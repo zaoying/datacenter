@@ -31,18 +31,8 @@ jobs:
         docker_channel: stable # optional, default is stable
     - name: Build Image with Docker
       run: docker build -t datacenter-school:latest school && docker save datacenter-school:latest > datacenter-school-latest.tar
-  release:
-    runs-on: ubuntu-latest
-    needs: [build]
-    steps:
-    - uses: actions/checkout@master
-    - name: Create release
-      uses: Roang-zero1/github-create-release-action@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Create GitHub release
-      uses: Roang-zero1/github-upload-release-artifacts-action@master
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
       with:
-        args: datacenter-school-latest.tar
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # Artifact name
+        name: datacenter-school-latest.tar
