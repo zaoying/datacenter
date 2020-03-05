@@ -36,3 +36,5 @@ jobs:
       with:
         # Artifact name
         name: datacenter-school-latest.tar
+        # Directory containing files to upload
+        path: ./
