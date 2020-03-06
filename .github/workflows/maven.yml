@@ -30,11 +30,11 @@ jobs:
         # Docker Channel
         docker_channel: stable # optional, default is stable
     - name: Build Image with Docker
-      run: docker build -t datacenter-school:latest school && docker save datacenter-school:latest > datacenter-school-latest.tar
+      run: docker build -t datacenter-school:latest school && docker save datacenter-school:latest > datacenter-school-latest.tar && gzip datacenter-school-latest.tar.gz
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
       with:
         # Artifact name
         name: datacenter-school-latest.tar.gz
         # Directory containing files to upload
-        path: ./datacenter-school-latest.tar
+        path: ./datacenter-school-latest.tar.gz
