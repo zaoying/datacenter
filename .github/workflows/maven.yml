@@ -22,19 +22,10 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: setup-docker
-      uses: docker-practice/actions-setup-docker@0.0.1
-      with:
-        # Docker Version
-        docker_version: 19.03 # optional, default is 19.03
-        # Docker Channel
-        docker_channel: stable # optional, default is stable
-    - name: Build Image with Docker
-      run: docker build -t datacenter-school:latest school && docker save datacenter-school:latest > datacenter-school-latest.tar && gzip datacenter-school-latest.tar
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
       with:
         # Artifact name
-        name: datacenter-school-latest.tar.gz
+        name: school-0.0.1-SNAPSHOT.jar
         # Directory containing files to upload
-        path: ./datacenter-school-latest.tar.gz
+        path: /school/target/school-0.0.1-SNAPSHOT.jar
