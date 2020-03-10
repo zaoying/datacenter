@@ -40,6 +40,12 @@ eureka:
     ip-address: ${server.address}
     prefer-ip-address: true
 management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    health:
+      show-details: always
   metrics:
     tags:
       application: ${spring.application.name}
