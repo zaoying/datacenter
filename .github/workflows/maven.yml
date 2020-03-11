@@ -28,4 +28,4 @@ jobs:
         # Artifact name
         name: school-0.0.1-SNAPSHOT.jar
         # Directory containing files to upload
-        path: /school/target/school-0.0.1-SNAPSHOT.jar
+        path: school/target/school-0.0.1-SNAPSHOT.jar
