@@ -7,14 +7,14 @@ spring:
 spring:
   profiles: dev
 server:
-  port: 8083
+  port: 8082
   address: 127.0.0.1
 ---
 #灰度发布测试
 spring:
   profiles: gray
 server:
-  port: 8073
+  port: 8072
   address: 127.0.0.1
 ---
 spring:
@@ -35,7 +35,7 @@ feign:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://eureka:8761/eureka/
+      defaultZone: http://${REGISTER_ADDRESS:localhost:8761}/eureka/
   instance:
     ip-address: ${server.address}
     prefer-ip-address: true
