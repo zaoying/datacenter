@@ -1,22 +1,5 @@
-spring:
-  profiles:
-    #激活开发环境
-    active: dev
----
-#开发环境配置
-spring:
-  profiles: dev
 server:
   port: 8084
-  address: 127.0.0.1
----
-#灰度发布测试
-spring:
-  profiles: gray
-server:
-  port: 8074
-  address: 127.0.0.1
----
 spring:
   application:
     name: school-service
