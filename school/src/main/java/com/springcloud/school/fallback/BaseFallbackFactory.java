@@ -5,9 +5,9 @@ import feign.hystrix.FallbackFactory;
 /**
  * @author huangzurong
  */
-public class BaseFallbackFactory implements FallbackFactory<BaseClientFallback> {
+public class BaseFallbackFactory<T,ID> implements FallbackFactory<BaseClientFallback<T,ID>> {
     @Override
-    public BaseClientFallback create(Throwable throwable) {
+    public BaseClientFallback<T,ID> create(Throwable throwable) {
         return null;
     }
 }
