@@ -1,11 +1,8 @@
 package com.springcloud.school.service;
 
-import com.springcloud.school.dao.SchoolDAO;
 import com.springcloud.school.po.School;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import org.springframework.stereotype.Service;
 
 /**
  * @author huangzurong

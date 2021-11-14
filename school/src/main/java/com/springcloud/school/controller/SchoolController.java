@@ -1,5 +1,7 @@
 package com.springcloud.school.controller;
 
+import java.util.Optional;
+
 import com.springcloud.school.client.StudentClient;
 import com.springcloud.school.client.TeacherClient;
 import com.springcloud.school.dto.Response;
@@ -8,12 +10,14 @@ import com.springcloud.school.dto.Teacher;
 import com.springcloud.school.po.School;
 import com.springcloud.school.service.SchoolService;
 import com.springcloud.school.utils.Status;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/school")

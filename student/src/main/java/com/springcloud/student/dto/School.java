@@ -1,7 +1,5 @@
 package com.springcloud.student.dto;
 
-import javax.persistence.*;
-
 /**
  * @author huangzurong
  */
