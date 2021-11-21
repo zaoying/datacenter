@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: datacenter-dep
+  namespace: spring-cloud
+  labels:
+    app: datacenter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: datacenter
+  template:
+    metadata:
+      labels:
+        app: datacenter
+    spec:
+      containers:
+      - name: eureka
+        image: datacenter-eureka:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8761
+      - name: school
+        image: datacenter-school:latest
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: MYSQL_ADDRESS
+          value: mysql:3306
+        - name: MYSQL_PASSWORD
+          value: bocloud@2019
+        ports:
+        - containerPort: 8084
+      - name: teacher
+        image: datacenter-teacher:latest
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: MYSQL_ADDRESS
+          value: mysql:3306
+        - name: MYSQL_PASSWORD
+          value: bocloud@2019
+        ports:
+        - containerPort: 8082
+      - name: student
+        image: datacenter-student:latest
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: MYSQL_ADDRESS
+          value: mysql:3306
+        - name: MYSQL_PASSWORD
+          value: bocloud@2019
+        ports:
+        - containerPort: 8083
