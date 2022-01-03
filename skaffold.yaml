@@ -1,0 +1,37 @@
+apiVersion: skaffold/v2beta26	                 # version of the configuration.
+kind: Config	                                 # always Config.
+metadata:
+  name: datacenter
+build:
+  local:
+    push: false
+  artifacts:
+    - image: datacenter-eureka         # must match in artifactOverrides
+      context: "eureka"
+      docker:
+        dockerfile: Dockerfile
+    - image: datacenter-school         # must match in artifactOverrides
+      context: "school"
+      docker:
+        dockerfile: Dockerfile
+    - image: datacenter-teacher        # must match in artifactOverrides
+      context: "teacher"
+      docker:
+        dockerfile: Dockerfile
+    - image: datacenter-student        # must match in artifactOverrides
+      context: "student"
+      docker:
+        dockerfile: Dockerfile
+deploy:
+  helm:
+    releases:
+    - name: datacenter
+      chartPath: package
+      artifactOverrides:
+        image:
+          eureka: datacenter-eureka               # no tag present!
+          school: datacenter-school               # no tag present!
+          teacher: datacenter-teacher               # no tag present!
+          student: datacenter-student               # no tag present!
+      imageStrategy:
+        helm: {}

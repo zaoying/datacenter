@@ -17,12 +17,12 @@ spec:
     spec:
       containers:
       - name: eureka
-        image: datacenter-eureka:latest
+        image: {{.Values.image.eureka.repository}}:{{.Values.image.eureka.tag}}
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8761
       - name: school
-        image: datacenter-school:latest
+        image: {{.Values.image.school.repository}}:{{.Values.image.school.tag}}
         imagePullPolicy: IfNotPresent
         env:
         - name: MYSQL_ADDRESS
@@ -32,7 +32,7 @@ spec:
         ports:
         - containerPort: 8084
       - name: teacher
-        image: datacenter-teacher:latest
+        image: {{.Values.image.teacher.repository}}:{{.Values.image.teacher.tag}}
         imagePullPolicy: IfNotPresent
         env:
         - name: MYSQL_ADDRESS
@@ -42,7 +42,7 @@ spec:
         ports:
         - containerPort: 8082
       - name: student
-        image: datacenter-student:latest
+        image: {{.Values.image.student.repository}}:{{.Values.image.student.tag}}
         imagePullPolicy: IfNotPresent
         env:
         - name: MYSQL_ADDRESS
