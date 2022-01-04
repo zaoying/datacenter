@@ -11,7 +11,7 @@
     <modules>
         <module>school</module>
         <module>eureka</module>
-        <module>zuul</module>
+        <!-- <module>zuul</module> -->
         <module>teacher</module>
         <module>student</module>
         <module>zipkin</module>

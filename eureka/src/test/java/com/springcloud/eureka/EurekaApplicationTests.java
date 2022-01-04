@@ -1,6 +1,6 @@
 package com.springcloud.eureka;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 //@RunWith(SpringRunner.class)
 //@SpringBootTest
