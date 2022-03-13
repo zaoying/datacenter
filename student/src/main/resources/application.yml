@@ -3,6 +3,9 @@ server:
 spring:
   application:
     name: student-service
+  cloud:
+    config: 
+      enabled: false
   datasource:
     dirver: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://${MYSQL_ADDRESS:localhost:3306}/cloudtest?characterEncoding=utf-8&serverTimezone=UTC

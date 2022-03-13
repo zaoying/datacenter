@@ -11,21 +11,33 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-    - name: Set up JDK 1.8
+    - name: Set up JDK 1.1
       uses: actions/setup-java@v1
       with:
-        java-version: 1.8
+        java-version: 1.11
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: Upload artifact
+    - name: Upload school artifact
       uses: actions/upload-artifact@v1.0.0
       with:
         # Artifact name
         name: school-0.0.1-SNAPSHOT.jar
         # Directory containing files to upload
         path: school/target/school-0.0.1-SNAPSHOT.jar
+    - name: Upload student artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        # Artifact name
+        name: student-0.0.1-SNAPSHOT.jar
+        # Directory containing files to upload
+        path: student/target/student-0.0.1-SNAPSHOT.jar
+    - name: Upload teacher artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        # Artifact name
+        name: teacher-0.0.1-SNAPSHOT.jar
+        # Directory containing files to upload
+        path: teacher/target/teacher-0.0.1-SNAPSHOT.jar
