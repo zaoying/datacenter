@@ -8,20 +8,21 @@ build:
   artifacts:
     - image: datacenter-eureka         # must match in artifactOverrides
       context: "eureka"
-      docker:
-        dockerfile: Dockerfile
     - image: datacenter-school         # must match in artifactOverrides
       context: "school"
-      docker:
-        dockerfile: Dockerfile
+      # custom:
+      #   buildCommand: |
+      #     buildah bud -t $IMAGE -f .
     - image: datacenter-teacher        # must match in artifactOverrides
       context: "teacher"
-      docker:
-        dockerfile: Dockerfile
+      # custom:
+      #   buildCommand: |
+      #     buildah bud -t $IMAGE -f .
     - image: datacenter-student        # must match in artifactOverrides
       context: "student"
-      docker:
-        dockerfile: Dockerfile
+      # custom:
+      #   buildCommand: |
+      #     buildah bud -t $IMAGE -f .
 deploy:
   helm:
     releases:

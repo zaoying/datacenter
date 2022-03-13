@@ -10,8 +10,8 @@ public class ClassUtil {
     public static <T> Optional<T> newInstance(Class<T> clazz){
         T instance = null;
         try {
-            instance = clazz.newInstance();
-        } catch (InstantiationException | IllegalAccessException e) {
+            instance = clazz.getConstructor(clazz).newInstance();
+        } catch (Throwable e) {
             e.printStackTrace();
         }
         return Optional.ofNullable(instance);

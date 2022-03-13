@@ -9,12 +9,10 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>school</module>
         <module>eureka</module>
-        <!-- <module>zuul</module> -->
+        <module>school</module>
         <module>teacher</module>
         <module>student</module>
-        <module>zipkin</module>
     </modules>
 
 
