@@ -8,21 +8,48 @@ build:
   artifacts:
     - image: datacenter-eureka         # must match in artifactOverrides
       context: "eureka"
+      custom:
+        buildCommand: |
+          mvn clean package && 7z x target/eureka-0.0.1-SNAPSHOT.war -otarget/exploded && docker build -t %IMAGE% -f Dockerfile.dev %BUILD_CONTEXT%
+        dependencies:
+          paths:
+          - target/classes
+          - Dockerfile.dev
+          ignore:
+          - target/exploded
     - image: datacenter-school         # must match in artifactOverrides
       context: "school"
-      # custom:
-      #   buildCommand: |
-      #     buildah bud -t $IMAGE -f .
+      custom:
+        buildCommand: |
+          mvn clean package && 7z x target/school-0.0.1-SNAPSHOT.war -otarget/exploded && docker build -t %IMAGE% -f Dockerfile.dev %BUILD_CONTEXT%
+        dependencies:
+          paths:
+          - target/classes
+          - Dockerfile.dev
+          ignore:
+          - target/exploded
     - image: datacenter-teacher        # must match in artifactOverrides
       context: "teacher"
-      # custom:
-      #   buildCommand: |
-      #     buildah bud -t $IMAGE -f .
+      custom:
+        buildCommand: |
+          mvn clean package && 7z x target/teacher-0.0.1-SNAPSHOT.war -otarget/exploded && docker build -t %IMAGE% -f Dockerfile.dev %BUILD_CONTEXT%
+        dependencies:
+          paths:
+          - target/classes
+          - Dockerfile.dev
+          ignore:
+          - target/exploded
     - image: datacenter-student        # must match in artifactOverrides
       context: "student"
-      # custom:
-      #   buildCommand: |
-      #     buildah bud -t $IMAGE -f .
+      custom:
+        buildCommand: |
+          mvn clean package && 7z x target/student-0.0.1-SNAPSHOT.war -otarget/exploded && docker build -t %IMAGE% -f Dockerfile.dev %BUILD_CONTEXT%
+        dependencies:
+          paths:
+          - target/classes
+          - Dockerfile.dev
+          ignore:
+          - target/exploded
 deploy:
   helm:
     releases:

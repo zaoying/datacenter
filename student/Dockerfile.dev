@@ -1,0 +1,7 @@
+FROM tomcat:9.0.62-jre11-temurin-focal
+RUN rm -rf /usr/local/tomcat/webapps.dist
+RUN sed -i 's/redirectPort="8443"//' /usr/local/tomcat/conf/server.xml && sed -i 's/8005/8002/' /usr/local/tomcat/conf/server.xml && sed -i 's/8080/8082/' /usr/local/tomcat/conf/server.xml
+COPY target/exploded /usr/local/tomcat/webapps/ROOT
+COPY target/classes /usr/local/tomcat/webapps/ROOT/WEB-INF/classes
+EXPOSE 8082
+CMD ["catalina.sh", "run"]

@@ -6,7 +6,7 @@
 	<groupId>com.springcloud</groupId>
 	<artifactId>school</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>school</name>
 	<description>School project for Spring Boot</description>
@@ -24,6 +24,7 @@
 		<java.version>11</java.version>
 		<tomcat.version>9.0.56</tomcat.version>
 		<spring-cloud.version>2021.0.0</spring-cloud.version>
+		<start-class>com.springcloud.eureka.SchoolApplication</start-class>
 	</properties>
 
 	<dependencies>
@@ -55,6 +56,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
@@ -69,11 +76,6 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<optional>true</optional>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

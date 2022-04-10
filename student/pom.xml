@@ -6,7 +6,7 @@
 	<groupId>com.springcloud</groupId>
 	<artifactId>student</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>student</name>
 	<description>Student project for Spring Boot</description>
@@ -24,6 +24,7 @@
 		<java.version>11</java.version>
 		<tomcat.version>9.0.56</tomcat.version>
 		<spring-cloud.version>2021.0.0</spring-cloud.version>
+		<start-class>com.springcloud.eureka.StudentApplication</start-class>
 	</properties>
 
 	<dependencies>
@@ -43,15 +44,17 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-sleuth</artifactId>
-		</dependency>
 
 		<dependency>
 			<groupId>net.logstash.logback</groupId>
 			<artifactId>logstash-logback-encoder</artifactId>
 			<version>4.11</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
@@ -69,11 +72,6 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<optional>true</optional>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

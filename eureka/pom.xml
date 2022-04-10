@@ -6,7 +6,7 @@
 	<groupId>com.springcloud</groupId>
 	<artifactId>eureka</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>eureka</name>
 	<description>eureka project for Spring Boot</description>
@@ -22,14 +22,20 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>11</java.version>
-		<tomcat.version>9.0.56</tomcat.version>
 		<spring-cloud.version>2021.0.0</spring-cloud.version>
+		<start-class>com.springcloud.eureka.EurekaApplication</start-class>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
